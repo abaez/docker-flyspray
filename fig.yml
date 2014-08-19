@@ -1,0 +1,11 @@
+web:
+  build: .
+  command: php -S 0.0.0.0:80 -t /app
+  ports:
+    - "8000:80"
+  links:
+    - db
+  #volumes:
+  #  - /data/Downloads/fig/flyspray:/app
+db:
+  image: postgres

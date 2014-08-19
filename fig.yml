@@ -5,7 +5,9 @@ web:
     - "8000:80"
   links:
     - db
-  #volumes:
-  #  - /data/Downloads/fig/flyspray:/app
 db:
-  image: postgres
+  image: wyaeld/postgres
+  environment:
+      - POSTGRESQL_USER=flyspray
+      - POSTGRESQL_PASS=flyspray
+      - POSTGRESQL_DB=flyspray

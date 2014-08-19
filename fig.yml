@@ -1,6 +1,6 @@
 web:
   build: .
-  command: php -S 0.0.0.0:80 -t /app
+  command: php -S 0.0.0.0:80 -t /data/http
   ports:
     - "8000:80"
   links:

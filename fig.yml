@@ -5,16 +5,13 @@ web:
     - "80:80"
   links:
     - db
-db:
-  image: wyaeld/postgres
   volumes_from:
-    - dbdata
-  links:
-    - dbdata
-  environment:
-      - POSTGRESQL_USER=flyspray
-      - POSTGRESQL_PASS=flyspray
-      - POSTGRESQL_DB=flyspray
-dbdata:
-  image: wyaeld/postgres:data
+    - db
+
+db:
+  image: tutum/mariadb
+  volumes:
+    - /var/lib/mysql
   
+  environment:
+    - MARIADB_PASS=somepass

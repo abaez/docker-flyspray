@@ -9,7 +9,14 @@ web:
     - db
 db:
   image: wyaeld/postgres
+  volumes_from:
+    - dbdata
+  links:
+    - dbdata
   environment:
       - POSTGRESQL_USER=flyspray
       - POSTGRESQL_PASS=flyspray
       - POSTGRESQL_DB=flyspray
+dbdata:
+  image: wyaeld:postgres:data
+  

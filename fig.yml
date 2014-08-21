@@ -3,8 +3,6 @@ web:
   command: php -S 0.0.0.0:80 -t /app
   ports:
     - "80:80"
-  volumes_from:
-    - db
   links:
     - db
 db:
@@ -18,5 +16,5 @@ db:
       - POSTGRESQL_PASS=flyspray
       - POSTGRESQL_DB=flyspray
 dbdata:
-  image: wyaeld:postgres:data
+  image: wyaeld/postgres:data
   

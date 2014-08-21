@@ -1,8 +1,10 @@
 web:
   build: .
-  command: php -S 0.0.0.0:80 -t /data/http
+  command: php -S 0.0.0.0:80 -t /app
   ports:
-    - "8000:80"
+    - "80:80"
+  volumes_from:
+    - db
   links:
     - db
 db:

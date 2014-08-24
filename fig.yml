@@ -1,3 +1,10 @@
+db:
+  image: tutum/mariadb
+  volumes:
+    - ./db:/var/lib/mysql
+  environment:
+    - MARIADB_PASS=somepass
+
 web:
   build: .
   command: php -S 0.0.0.0:80 -t /app
@@ -5,9 +12,3 @@ web:
     - "80:80"
   links:
     - db
-db:
-  image: tutum/mariadb
-  volumes:
-    - ./db:/var/lib/mysql
-  environment:
-    - MARIADB_PASS=somepass

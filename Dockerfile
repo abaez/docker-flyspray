@@ -3,14 +3,9 @@ FROM tutum/apache-php
 MAINTAINER Alejandro Baez 
 
 
-RUN apt-get update && apt-get install -yq git curl unzip postgresql
-
-#RUN su - postgres -c "creatuser -h $DB_PORT_5432_TCP_ADDR -SDR flyspray;"
-#RUN su - postgres -c "createdb -h $DB_PORT_5432_TCP_ADDR -E UNICODE -O flyspray flyspray;"
+RUN apt-get update && apt-get install -yq git 
 
 RUN rm /app -rf 
 RUN git clone https://github.com/Flyspray/flyspray.git /app
-RUN rm /var/www/html && ln -s /app /var/www/html
 RUN cd /app; composer install 
-#RUN curl -o fly.zip http://flyspray.org/flyspray-0.9.9.7.zip; unzip -d /app
 

@@ -5,13 +5,9 @@ web:
     - "80:80"
   links:
     - db
-  volumes_from:
-    - db
-
 db:
   image: tutum/mariadb
   volumes:
-    - /var/lib/mysql
-  
+    - ./db:/var/lib/mysql
   environment:
     - MARIADB_PASS=somepass

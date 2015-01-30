@@ -7,7 +7,6 @@ db:
 
 web:
   build: .
-  command: php -S 0.0.0.0:80 -t /app
   ports:
     - "80:80"
   links:

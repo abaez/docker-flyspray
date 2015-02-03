@@ -2,11 +2,35 @@
 A docker container for flyspray by [Alejandro Baez](https://twitter.com/a_baez)
 
 ## DESCRIPTION
-
+A docker container for flyspray bug tracker. The latest version from source
+is what used for the build. It currently still has initial setup configuration
+for ease of use.
 
 ## INSTALLATION
 
+### From source
+If using from source, simply clone the repository and run by using the
+contained `fig.yml` file.
+
+    hg clone <abaez/docker-flyspray source> docker-flyspray
+    cd docker-flyspray
+    fig build
+
+### From docker hub
+If using the docker container hub, then you can use the docker build.
+
+    docker pull abaez/flyspray
+
 ## USAGE
+Installation is simple enough, but running, you may want to mount the `/app`
+on location of your choosing. This `/app` will be where your flyspray
+configuration will go. I may end up changing this to only use a configuration
+file, but for right now it requires full `/app` directory.
+
+### From source
+You edit line 15 on `fig.yml` to where you have your flyspray configuration.
+Then simply
+
 
 ## LICENSE
 The MIT License (MIT)

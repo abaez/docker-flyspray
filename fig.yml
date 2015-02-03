@@ -11,3 +11,5 @@ web:
     - "80:80"
   links:
     - db
+  volumes:
+    - ./app:/app

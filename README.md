@@ -16,7 +16,7 @@ contained `fig.yml` file.
     cd docker-flyspray
     fig build
 
-### From docker hub
+### From docker directly
 If using the docker container hub, then you can use the docker build.
 
     docker pull abaez/flyspray
@@ -29,7 +29,13 @@ file, but for right now it requires full `/app` directory.
 
 ### From source
 You edit line 15 on `fig.yml` to where you have your flyspray configuration.
-Then simply
+Then simply run `fig up`
+
+### from docker directly
+You need to give where you have your flyspray configuration and you need to
+give where is your database located.
+
+    docker run -v ./app:/app --link db -p "80:80" abaez/flyspray
 
 
 ## LICENSE

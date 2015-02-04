@@ -12,4 +12,5 @@ web:
   links:
     - db
   volumes:
-    - ./app:/app
+    - ./app/cache:/app/cache
+    - ./app/attachments:/app/attachments

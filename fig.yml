@@ -1,9 +1,8 @@
 db:
-  image: tutum/mariadb
-  volumes:
-    - ./db:/var/lib/mysql
+  image: postgres
   environment:
-    - MARIADB_PASS=somepass
+    - POSTGRES_PASSWORD=somepass
+    - POSTGRES_USER=flyspray
 
 web:
   build: .

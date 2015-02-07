@@ -16,6 +16,10 @@ RUN composer install
 
 RUN chown www-data:www-data /app -R
 
-VOLUME ["/app/attachments" "/app/cache", "/app/setup"]
+WORKDIR /
+
+VOLUME /app/attachments
+VOLUME /app/cache
+VOLUME /app/setup
 
 CMD ["php ", "-S 0.0.0.0:80 ", "-t /app"]

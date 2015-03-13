@@ -10,11 +10,11 @@ for ease of use.
 
 ### From source
 If using from source, simply clone the repository and run by using the
-contained `fig.yml` file.
+contained `docker-compose.yml` file.
 
     hg clone <abaez/docker-flyspray source> docker-flyspray
     cd docker-flyspray
-    fig build
+    docker-compose build
 
 ### From docker directly
 If using the docker container hub, then you can use the docker build.
@@ -28,8 +28,8 @@ configuration will go. I may end up changing this to only use a configuration
 file, but for right now it requires full `/app` directory.
 
 ### From source
-You edit line 15 on `fig.yml` to where you have your flyspray configuration.
-Then simply run `fig up`
+You edit line 15 on `docker-compose.yml` to where you have your flyspray configuration.
+Then simply run `docker-compose up`
 
 ### from docker directly
 You need to give where you have your flyspray configuration and you need to
